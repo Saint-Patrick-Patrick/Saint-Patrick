@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import { registerUser } from '../../../../features/apiPetitions'
+import style from "./Register.module.css"
+import { Logo } from "../../global/Logo/Logo"
+import { registerUser } from '../../features/apiPetitions'
 import validationForm from './validator'
 
 export default function Register() {
@@ -39,29 +41,33 @@ export default function Register() {
     }
 
   return (
-    <div>
-        <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'column', minHeight:'500px', justifyContent:'space-around'}}>
-            <div style={{display:'flex', flexDirection:'column'}}>
+    <div className={style.contain}>
+
+        <div>
+           <Logo/>
+        </div>
+        <form onSubmit={handleSubmit}>
+            <div >
                 <small>Nombre</small>
                 <input type="text" name='firstname' value={form.firstname} onChange={handleChange} placeholder='Nombre'/>
                 <small>{errors?.firstname}</small>
             </div>
-            <div style={{display:'flex', flexDirection:'column'}}>
+            <div >
                 <small>Apellido</small>
                 <input type="text" name='lastname' value={form.lastname} onChange={handleChange} placeholder='Apellido'/>
                 <small>{errors?.lastname}</small>
             </div>
-            <div style={{display:'flex', flexDirection:'column'}}>
+            <div >
                 <small>Correo</small>
                 <input type="text" name='email' value={form.email} onChange={handleChange} placeholder='Correo'/>
                 <small>{errors?.email}</small>
             </div>
-            <div style={{display:'flex', flexDirection:'column'}}>
+            <div >
                 <small>Contraseña</small>
                 <input type="password" name='password' value={form.password} onChange={handleChange} placeholder='Contraseña'/>
                 <small>{errors?.password}</small>
             </div>
-            <div style={{display:'flex', flexDirection:'column'}}>
+            <div>
                 <small>Confirmar Contraseña</small>
                 <input type="password" name='confirmPassword' value={form.confirmPassword} onChange={handleChange} placeholder='Confirmar Contraseña'/>
                 <small>{errors?.confirmPassword}</small>
