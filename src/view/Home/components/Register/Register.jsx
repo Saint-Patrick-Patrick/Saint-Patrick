@@ -26,6 +26,13 @@ export default function Register() {
             registerUser(form)
             .then((data) => {console.log(data), alert('Usuario Registrado correctamente')})
             .catch((e) => console.log(e))
+            setForm({
+                email: '',
+                firstname: '',
+                lastname:'',
+                password: '',
+                confirmPassword:''
+            })
         }else{
             alert('Debe completar todos los campos sin errores')
         }
