@@ -25,9 +25,9 @@ const validationForm = {
         return validationForm.errors
     }, */
     firstname:(form) => {
-        if(form.firstname.length<2){
+        if(form.firstname.length<3){
             validationForm.errors.firstname = 'El nombre debe ser mas largo que 2 letras'
-        }else if(form.firstname.length>20){
+        }else if(form.firstname.length>39){
             validationForm.errors.firstname = 'El nombre debe tener menos de 20 letras de largo'
         }else if(!form.firstname){
             validationForm.errors.firstname = 'El nombre no puede estar vacio'
@@ -39,14 +39,14 @@ const validationForm = {
         return validationForm.errors
     },
     lastname: (form) => {
-        if(form.lastname.length<4){
-            validationForm.errors.lastname = 'El apellido debe ser mas largo que 4 letras'
+        if(form.lastname.length<3){
+            validationForm.errors.lastname = 'El apellido debe ser mas largo que 2 letras'
         }else if(form.lastname.length>20){
             validationForm.errors.lastname = 'El apellido debe tener menos de 20 letras de largo'
         }else if(!form.lastname){
             validationForm.errors.lastname = 'El apellido no puede estar vacio'
-        }else if(!form.lastname.match(/^(?=.{4,20}$)[a-z]+(?:['_.\s][a-z]+)*$/i)){
-            validationForm.errors.lastname = "El nombre no puede tener caracteres especiales o espacios antes y después del nombre"
+        }else if(!form.lastname.match(/^(?=.{3,20}$)[a-z]+(?:['_.\s][a-z]+)*$/i)){
+            validationForm.errors.lastname = "El apellido no puede tener caracteres especiales o espacios antes y después del nombre"
         }else{
             delete validationForm.errors.lastname
         }
