@@ -1,0 +1,22 @@
+body{
+    margin: 0;
+    line-height: normal;
+}
+
+:root{
+    --font-javanese-text: "Javanese Text";
+    --font-roboto: Roboto;
+    --font-inter: Inter;
+
+    --font-size-xl: 20px;
+    --font-size-xs: 10px;
+    --font-size-xs: 12px;
+
+    --color-black: #000;
+    --color-white: #fff;
+    --color-khaki: #e9e55e;
+    --color-darkgreen: #26730e;
+
+    --br-xl: 20px;
+    --br-llxl: 30px;
+}
