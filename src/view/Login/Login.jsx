@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';
 import './global.css';
-import 'font-awesome/css/font-awesome.min.css';
+
 
 function Login() {
 return (
