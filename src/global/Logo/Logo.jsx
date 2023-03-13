@@ -10,7 +10,7 @@ export const Logo = () => {
         <Link to = '/'>
         <img className = {style.logo} src={logo} alt="" />
         </Link>
-       
+      
 
     </div>
   )
