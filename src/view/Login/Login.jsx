@@ -6,17 +6,19 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const token = params.get("token");
     if (token) {
       localStorage.setItem("tkn", token);
-      authUser(token, dispatch);
+      authUser(token, dispatch).then(e => window.location.pathname = '/wallet')
+
     }
   }, []);
 
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+
 
   const [form, setForm] = useState({
     email: "",

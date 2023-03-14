@@ -1,16 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
-import { authUser } from "../../features/apiPetitions";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import {  useSelector } from "react-redux";
 
 function Wallet() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  useEffect(() => {
-      authUser(localStorage.getItem('tkn'), dispatch);
-  }, []);
+  const user = useSelector((state) => state.user.user);
+
 
   return (
     <div>

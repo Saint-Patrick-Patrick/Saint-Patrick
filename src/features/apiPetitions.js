@@ -36,14 +36,15 @@ export async function authUser(token, state){
   try {
     const petition = await axios.get("/users/auth", {
       headers:{
-        authorization:`Bearer ${localStorage.getItem("tkn")}`
+        authorization:`Bearer ${token}`
       }
     })
     state(setUser(petition?.data))
-    localStorage.setItem('user', petition?.data.firstname);
+    localStorage.setItem('user', petition?.data);
     return
   } catch (error) {
-    console.log(error)
+    localStorage.removeItem('tkn')
+    window.location.pathname = '/'
   }
 }
 
