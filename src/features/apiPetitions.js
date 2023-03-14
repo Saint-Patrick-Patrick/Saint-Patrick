@@ -32,23 +32,33 @@ export async function loginUser(body, state){
     console.log(error)
   }
 }
-
-export async function authGoogle(state){
+export async function authUser(token, state){
   try {
-    const petition = await axios.get("/auth/google")
-    state(setUser(petition?.data.user))
-    localStorage.setItem('tkn', petition?.data.token)
+    const petition = await axios.get("/users/auth", {
+      headers:{
+        authorization:`Bearer ${localStorage.getItem("tkn")}`
+      }
+    })
+    state(setUser(petition?.data))
+    localStorage.setItem('user', petition?.data.firstname);
+    return
   } catch (error) {
     console.log(error)
   }
 }
 
-export async function authFacebook(state){
-  try {
-    const petition = await axios.get("/auth/facebook")
-    state(setUser(petition?.data.user))
-    localStorage.setItem('tkn', petition?.data.token)
-  } catch (error) {
-    console.log(error)
-  }
-}
+// export async function authGoogle(state){
+//   try {
+//     window.location.href = "http://localhost:5000/api/auth/google"
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+
+// export async function authFacebook(state){
+//   try {
+//     const petition = await axios.get("/auth/facebook")
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
