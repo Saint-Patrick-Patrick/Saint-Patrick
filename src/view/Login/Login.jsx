@@ -9,13 +9,14 @@ function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const token = params.get("token");
-    if (token) {
-      localStorage.setItem("tkn", token);
-      authUser(token, dispatch).then(e => window.location.pathname = '/wallet')
-
-    }
+    setTimeout(() => {
+        const params = new URLSearchParams(window.location.search);
+            const token = params.get("token");
+            if (token) {
+            localStorage.setItem("tkn", token);
+            authUser(token, dispatch).then(e => window.location.pathname = '/wallet')
+            }
+    }, 50)
   }, []);
 
 
@@ -32,7 +33,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     loginUser(form, dispatch)
-      .then(() => navigate("/walet"))
+      .then(() => navigate("/wallet"))
       .catch((err) => console.log(err));
   };
 
@@ -81,6 +82,8 @@ function Login() {
         </button>
         <button className="btn-submit">Iniciar sesión</button>
       </form>
+
+      
     </div>
   );
 }

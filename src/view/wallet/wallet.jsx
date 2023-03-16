@@ -13,7 +13,7 @@ function Wallet() {
           {user?.firstname}
           {user?.lastname}
           {user?.email}
-          {user?.wallet}
+          {user?.wallet.amount}
         </div>
       ) : null}
       {console.log(user)}

@@ -43,6 +43,7 @@ export async function authUser(token, state){
     localStorage.setItem('user', petition?.data);
     return
   } catch (error) {
+    console.log(error)
     localStorage.removeItem('tkn')
     window.location.pathname = '/'
   }
