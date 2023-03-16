@@ -32,7 +32,7 @@ export default function Register() {
             delete form.confirmPassword
             registerUser(form, dispatch)
             .then(() => {alert('Usuario Registrado correctamente')})
-            .then(() => navigate('/walet'))
+            .then(() => navigate('/wallet'))
             .catch((e) => console.log(e))
             setForm({
                 email: '',
