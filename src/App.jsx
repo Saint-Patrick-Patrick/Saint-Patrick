@@ -5,6 +5,7 @@ import { Home } from "./view/Home/Home";
 import { NavBar } from "./global/NavBar/NavBar"
 import Login from "./view/Login/Login";
 import Wallet from "./view/wallet/wallet";
+import About from "./view/About/About";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { authUser } from "./features/apiPetitions";
@@ -26,6 +27,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/wallet" element={<Wallet />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );
