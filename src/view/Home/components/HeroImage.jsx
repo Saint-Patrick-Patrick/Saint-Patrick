@@ -16,11 +16,11 @@ export function HeroImage(){
             <div className={style.slogan}>
                 <h1>
                     Transferir dinero <br/>
-                    nunca habia sido <br/>
+                    nunca había sido <br/>
                     tan seguro, fácil y <br/>
                     rápido.              
                 </h1>
-                <button onClick={ handledMasInfo}>Mas Informacion</button>
+                <button className ={style.masinfobtn} onClick={ handledMasInfo}>Mas Informacion</button>
             </div>
             
             <div  className={style.containimg}>
