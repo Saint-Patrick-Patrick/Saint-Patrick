@@ -37,7 +37,7 @@ export function NavBar () {
         <div className={style.nav}>
           <Logo/>
           <div>
-            <NavLink to = '/nosotros'>
+            <NavLink to = '/about'>
             <h3>Sobre Nosotros</h3> 
             </NavLink>
             </div>
