@@ -1,13 +1,7 @@
-*
+
 body{
 position:static;
-background: linear-gradient(
-    62.87deg,
-    #002e34,
-    #25720f 95.83%,
-    #26730e 97.91%
-);
-
+background: var(--background-login);
 padding: 0px;
 box-sizing: border-box;
 width: 100%;
@@ -18,8 +12,6 @@ color: var(--color-black);
 font-family: var(--font-roboto);
 
 }
-
-
 
 h1 {
     text-align:center;

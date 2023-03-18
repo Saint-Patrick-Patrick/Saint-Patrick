@@ -1,7 +1,11 @@
+
+
 .contain{
     width: 100%;
     height: 100vh;
-    display: flex;   
+    display: flex; 
+    background: var(--background-home)
+    
 }
 
 .slogan{
@@ -11,12 +15,12 @@
 
 .containimg{
     width: 60%;
-    height: 100vh;
-    background-size: cover;
+    height: 90vh;  
 }
 
 .imghero{
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+   height: 90vh;
+   object-fit: cover
 }
 

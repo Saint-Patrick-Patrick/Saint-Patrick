@@ -1,0 +1,48 @@
+.btnLogin{
+    width: 150px;
+    height: 35px;
+    padding: 6px;
+    font-family: var(--font);
+    color: var(--white);
+    font-weight:bold;
+    font-size: var(--sm);
+    border-radius: 20px;
+    background: var(--soft-yellow);
+    backdrop-filter: blur(2px);
+    box-shadow: inset 0px 6px 4px rgba(104, 103, 103, 0.4);
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    position: relative;
+    
+
+}
+
+.btnLogin:hover {
+    color: var(--black)
+}
+
+.btnLogin::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    opacity: 0.4;
+    border-radius: 30px;
+    z-index: -1;
+    transition: transform 0.3s;
+    transform-origin: 1 1;
+    transition-timing-function: cubic-bezier(0.1, 0.7, 0.3, 0.7);
+    box-shadow: inset 0px 6px 4px rgba(104, 103, 103, 0.5);
+}
+
+.btn1::before{
+    transform: scaleX(0)
+}
+
+.btn1:hover::before {
+    transform: scaleX(0.9)
+}
