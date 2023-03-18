@@ -3,8 +3,13 @@ import style from "./Register.module.css"
 import { Logo } from "../../global/Logo/Logo"
 import { registerUser } from '../../features/apiPetitions'
 import validationForm from './validator'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 export default function Register() {
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const [errors, setErrors] = useState()
     const [form, setForm]  = useState({
@@ -25,8 +30,9 @@ export default function Register() {
         e.preventDefault()
         if (!Object.keys(errors).at(0)){
             delete form.confirmPassword
-            registerUser(form)
-            .then((data) => {console.log(data), alert('Usuario Registrado correctamente')})
+            registerUser(form, dispatch)
+            .then(() => {alert('Usuario Registrado correctamente')})
+            .then(() => navigate('/wallet'))
             .catch((e) => console.log(e))
             setForm({
                 email: '',
@@ -35,6 +41,7 @@ export default function Register() {
                 password: '',
                 confirmPassword:''
             })
+            
         }else{
             alert('Debe completar todos los campos sin errores')
         }
