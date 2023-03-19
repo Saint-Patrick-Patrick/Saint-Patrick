@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./Login.css";
-import "../../App.css";
+import style from './Login.module.css'
+import logoGoogle from '../../assets/Logo_Google.svg'
+import logoFacebook from '../../assets/Logo_Facebook.svg'
 import { authUser, loginUser } from "../../features/apiPetitions";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 function Login() {
   const navigate = useNavigate();
@@ -42,45 +43,48 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Inicio de Sesión</h1>
-      <form onSubmit={handleSubmit}>
-        <img src="img/Logosaint.png" alt="Logo de la empresa" />
+    <div className = {style.formcontainer}>
+       <h1>Inicio de Sesión</h1>
+      
+      <form  className = {style.form}  onSubmit={handleSubmit}> 
+        <label htmlFor="correo" className={style.label}>Login</label>
         <input
+          className = {style.inputext}
           type="text"
           id="correo"
           name="email"
           value={form.email}
-          placeholder="Ingresa tu correo electrónico o documento"
+          placeholder="Email"
           onChange={handleChange}
         />
-        <label htmlFor="correo">Login</label>
-        <div className="password-container">
+        <label className= {style.label} htmlFor="contrasena">Password</label>
+        <div className={style.password_container}>
           <input
+            className = {style.inputpassword}
             type="password"
             id="contrasena"
             name="password"
             value={form.password}
-            placeholder="Ingresa tu contraseña"
+            placeholder="Contraseña"
             onChange={handleChange}
           />
-          <label htmlFor="contrasena">Password</label>
+         
           <a href="#" style={{ float: "right" }}>
             ¿Olvidaste tu Contraseña?
           </a>
         </div>
-        <br />
-        <div className="btn-google" id="google" onClick={handlePassportLogin}>
-          Iniciar con Google
+       
+        <button className={style.btn_submit}>Iniciar sesión</button>
+
+        <div className={style.btn_google} id="google" onClick={handlePassportLogin}>
+          <img src={logoGoogle} alt="" />
+          <h3>Iniciar con Google</h3>
         </div>
-        <button
-          className="btn-facebook"
-          id="facebook"
-          onClick={handlePassportLogin}
-        >
-          Iniciar con Facebook
-        </button>
-        <button className="btn-submit">Iniciar sesión</button>
+        <div className={style.btn_facebook} id="google" >
+          <img src={logoFacebook} alt="" />
+          <h3>Iniciar con Facebook</h3>
+        </div>
+        
       </form>
 
       

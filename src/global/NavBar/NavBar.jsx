@@ -15,21 +15,33 @@ export function NavBar () {
    
 
 
-    function handledClosed (e) {
-      e.preventDefault()
-      navigate('/')
-    }
+    
 
   return (
     <nav className = {style.containNavBar}>
 
       
       {location.pathname === '/register' ? (
-        <div >
-            <BtnLogin/>
-            <button className = {style.btnClosed} onClick = {handledClosed}> X</button>
-        </div>    
-      ): (
+      <div className={style.nav}>
+        <div className={style.links}>
+        <Logo/>          
+        <Links/>  
+        </div>
+      <div className={style.btns1}>
+        <BtnLogin/>
+      </div>
+      </div>   
+      ): location.pathname === '/login' ?(
+        <div className={style.nav}>
+          <div className={style.links}>
+          <Logo/>          
+          <Links/>  
+          </div>
+        <div className={style.btns1}>
+          <BtnRegister/>
+        </div>
+        </div>   
+        ):(
         <div className={style.nav}>
           <Logo/>          
           <Links/>  

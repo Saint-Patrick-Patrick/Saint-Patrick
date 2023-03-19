@@ -22,7 +22,7 @@
 .btnRegister::before {
     content: '';
     position: absolute;
-    left: -14px;
+    left: -9px;
     top: 0;
     width: 100%;
     height: 100%;
@@ -41,5 +41,5 @@
 }
 
 .btn1:hover::before {
-    transform: scaleX(0.8)
+    transform: scaleX(0.9)
 }

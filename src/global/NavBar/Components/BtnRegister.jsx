@@ -12,7 +12,7 @@ export const BtnRegister = () => {
      
      return (
        <div>
-           <button className = {`${style.btnRegister} ${style.btn1}`} onClick = {handledRegister}>Register</button>
+           <button className = {`${style.btnRegister} ${style.btn1}`} onClick = {handledRegister}>Registrate</button>
        </div>
      )
 }
