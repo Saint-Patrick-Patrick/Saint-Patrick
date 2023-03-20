@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import style from "./Register.module.css"
-import { Logo } from "../../global/Logo/Logo"
+import { FiEye } from 'react-icons/fi'
+import { FiEyeOff } from 'react-icons/fi'
 import { registerUser } from '../../features/apiPetitions'
 import validationForm from './validator'
 import { useNavigate } from 'react-router-dom'
@@ -48,40 +49,76 @@ export default function Register() {
     }
 
   return (
-    <div className={style.contain}>
-
-        <div>
-           <Logo/>
-        </div>
-        <form onSubmit={handleSubmit}>
-            <div >
-                <small>Nombre</small>
-                <input type="text" name='firstname' value={form.firstname} onChange={handleChange} placeholder='Nombre'/>
+    <div className={style.formcontainer}>
+        <h1>Registrate</h1>
+     
+        <form  className = {style.form} onSubmit={handleSubmit}>
+            
+                <label className={style.label}>Nombre</label>
+                <input 
+                className = {style.inputext}
+                type="text" 
+                name='firstname' 
+                value={form.firstname} 
+                onChange={handleChange} 
+                placeholder='Nombre'/>
                 <small>{errors?.firstname}</small>
-            </div>
-            <div >
-                <small>Apellido</small>
-                <input type="text" name='lastname' value={form.lastname} onChange={handleChange} placeholder='Apellido'/>
+           
+            
+                <label className={style.label}>Apellido</label>
+                <input 
+                className = {style.inputext}
+                type="text" 
+                name='lastname' 
+                value={form.lastname} 
+                onChange={handleChange} 
+                placeholder='Apellido'/>
                 <small>{errors?.lastname}</small>
-            </div>
-            <div >
-                <small>Correo</small>
-                <input type="text" name='email' value={form.email} onChange={handleChange} placeholder='Correo'/>
+            
+                <label className={style.label}> Correo</label>
+                <input 
+                className = {style.inputext}
+                type="text" 
+                name='email' 
+                value={form.email} 
+                onChange={handleChange} 
+                placeholder='Correo'/>
                 <small>{errors?.email}</small>
-            </div>
-            <div >
-                <small>Contraseña</small>
-                <input type="password" name='password' value={form.password} onChange={handleChange} placeholder='Contraseña'/>
+            
+                <label className={style.label}>Contraseña</label>
+                <div>
+                <input 
+                className = {style.inputpassword}
+                type="password" 
+                name='password' 
+                value={form.password} 
+                onChange={handleChange} 
+                placeholder='Contraseña'/>
                 <small>{errors?.password}</small>
-            </div>
-            <div>
-                <small>Confirmar Contraseña</small>
-                <input type="password" name='confirmPassword' value={form.confirmPassword} onChange={handleChange} placeholder='Confirmar Contraseña'/>
-                <small>{errors?.confirmPassword}</small>
-            </div>
+                <span className={style.eye}><FiEye/></span>
+                <span className={style.eye}><FiEyeOff/></span>
+
+                </div>
+            
+                <label className={style.label}>Confirmar Contraseña</label>
+                <div>
+                <input 
+                className = {style.inputpassword}
+                type="password" 
+                name='password' 
+                value={form.password} 
+                onChange={handleChange} 
+                placeholder='Contraseña'/>
+                <small>{errors?.password}</small>
+                <span className={style.eye}><FiEye/></span>
+                <span className={style.eye}><FiEyeOff/></span>
+
+                </div>
+            
         
-            <input type="submit" value={'Registrarse'}/>
+            <button className={style.btn_submit} type="submit" value={'Registrarse'}>Registrar</button>
         </form>
+       
     </div>
   )
 }

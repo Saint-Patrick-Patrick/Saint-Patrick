@@ -2,5 +2,31 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto' Arial, Helvetica, sans-serif;
 }
 
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100&display=swap');
+
+
+:root{
+  --font: 'roboto', sans-serif;
+  --lime-green: #26730E;
+  --soft-yellow: #E9E55E;
+  --orange: #FFA500;
+  --dark-cyan: #002e34;
+  --white: #ffffff;
+  --black: #000000;
+  --background-home: linear-gradient(160.3deg, #002E34 18.04%, #26730E 81.74%);
+  --background-login: linear-gradient(62.87deg, #002E34 45.83%, #25720F 99.75%, #26730E 100.91%, #002E34 100.92%);
+  --background-register: linear-gradient(60.77deg, #002E34 36.05%, #26730E 100%);
+  --background-nosotros: linear-gradient(125.47deg, #002E34 0.46%, #1F6714 85.3%);
+  --sm : 14px;
+  --md : 16px;
+  --lg : 18px;
+  --h1 : 50px;
+  ;
+
+
+
+}

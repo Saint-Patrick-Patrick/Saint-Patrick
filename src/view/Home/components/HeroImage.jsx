@@ -14,17 +14,17 @@ export function HeroImage(){
     return(
         <div className = {style.contain}>
             <div className={style.slogan}>
-                <h1 >
+                <h1>
                     Transferir dinero <br/>
-                    nunca habia sido <br/>
+                    nunca había sido <br/>
                     tan seguro, fácil y <br/>
                     rápido.              
                 </h1>
-                <button onClick={ handledMasInfo}>Mas Informacion</button>
+                <button className ={style.masinfobtn} onClick={ handledMasInfo}>Mas Informacion</button>
             </div>
             
             <div  className={style.containimg}>
-              <img className = {style.imghero}src={Heroimg} alt="" />
+              <img src={Heroimg} className = {style.imghero} alt="" />
             </div>
         </div>
     )

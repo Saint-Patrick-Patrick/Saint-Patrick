@@ -1,22 +1,53 @@
+
+
 .contain{
     width: 100%;
-    height: 100vh;
-    display: flex;   
+    height: 90vh;
+    display: flex; 
+    background: var(--background-home)
+    
 }
 
 .slogan{
     width: 40%;
-    height: 100vh;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.slogan h1 {
+    font-size: var(--h1);
+    color: var(--white);
+    font-family: var(--font);
 }
 
 .containimg{
     width: 60%;
-    height: 100vh;
-    background-size: cover;
+    height: 90vh;  
 }
 
 .imghero{
-    max-width: 100%;
-    height: auto;
+   width: 100%;
+   height: 90vh;
+   object-fit: cover;
+   filter: brightness(80%) blur(1.5px);
+}
+
+.masinfobtn {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--orange);
+    border: none;
+    cursor: pointer;
+    color: var(--black);
+    font-weight: bold;
+    font-family: var(--font);
+    font-size: var(--sm);
+    box-shadow: 10px 10px 10px 0px #1a1919;
+
 }
 

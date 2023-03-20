@@ -4,10 +4,42 @@
     padding: 0;
     background: #002E34;
     display: flex;
+    justify-content: center;
+    
     
 }
 
 .nav{
+    width: 95%;
     display: flex;
+    justify-content: space-around;
+  
+   
+
 }
+
+.links{
+    width: 80%;
+    margin-left: 0px;
+    display: flex;
+    justify-content: space-around;
+  
+}
+
+
+.btns{  
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btns1{
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 
