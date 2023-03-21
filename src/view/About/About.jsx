@@ -1,9 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import colaborators from "./colaborators";
-import style from './About.module.css'
+import style from "./About.module.css";
 
 export default function About() {
+  const handleClick=(link)=>{
+    window.open(link)
+  }
   return (
     <div className={style.container}>
       <div className={style.descriptionContainer}>
@@ -22,21 +25,24 @@ export default function About() {
             nosotros haciendo click en el siguiente boton:
           </p>
         </div>
-        <div className={style.buttonDiv}> 
+        <div className={style.buttonDiv}>
           <NavLink to={"/register"}>
             <button>Registrate</button>
           </NavLink>
         </div>
       </div>
       <div className={style.colabContainer}>
-        <h3>COLABORADORES</h3>
-        <div className={style.colaborators}>
-          {colaborators?.map((c) => (
-            <a href={c.link}>
-              <img src={c.image} alt={c.link} />
-            </a>
-          ))}
-        </div>
+        <div><h3>COLABORADORES</h3></div>
+        
+         <div className={style.blur}></div>
+          <div className={style.colaborators}>
+            {colaborators?.map((c) => (
+              // <a href={c.link}>
+                <img src={c.image} alt={c.link} onClick={()=> handleClick(c.link)} />
+              // </a>
+            ))}
+          </div>
+       
       </div>
     </div>
   );
