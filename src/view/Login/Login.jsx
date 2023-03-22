@@ -80,7 +80,7 @@ function Login() {
           <img src={logoGoogle} alt="" />
           <h3>Iniciar con Google</h3>
         </div>
-        <div className={style.btn_facebook} id="google" >
+        <div className={style.btn_facebook} id="facebook" onClick={handlePassportLogin}>
           <img src={logoFacebook} alt="" />
           <h3>Iniciar con Facebook</h3>
         </div>
