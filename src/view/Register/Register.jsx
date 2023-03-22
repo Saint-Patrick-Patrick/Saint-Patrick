@@ -12,7 +12,7 @@ export default function Register() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const [errors, setErrors] = useState()
+    const [errors, setErrors] = useState({error: 'error'})
     const [form, setForm]  = useState({
         email: '',
         firstname: '',
@@ -29,7 +29,7 @@ export default function Register() {
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        if (!Object.keys(errors).at(0)){
+        if (!Object.keys(errors).at(0) && !Object.values(form).includes('')){
             delete form.confirmPassword
             registerUser(form, dispatch)
             .then(() => {alert('Usuario Registrado correctamente')})
@@ -44,7 +44,7 @@ export default function Register() {
             })
             
         }else{
-            alert('Debe completar todos los campos sin errores')
+            alert('Debe completar todos los campos y no debe haber errores')
         }
     }
 
@@ -61,7 +61,9 @@ export default function Register() {
                 name='firstname' 
                 value={form.firstname} 
                 onChange={handleChange} 
-                placeholder='Nombre'/>
+                placeholder='Nombre'
+                required
+                />
                 <small>{errors?.firstname}</small>
            
             
@@ -72,7 +74,9 @@ export default function Register() {
                 name='lastname' 
                 value={form.lastname} 
                 onChange={handleChange} 
-                placeholder='Apellido'/>
+                placeholder='Apellido'
+                required
+                />
                 <small>{errors?.lastname}</small>
             
                 <label className={style.label}> Correo</label>
@@ -82,7 +86,9 @@ export default function Register() {
                 name='email' 
                 value={form.email} 
                 onChange={handleChange} 
-                placeholder='Correo'/>
+                placeholder='Correo'
+                required
+                />
                 <small>{errors?.email}</small>
             
                 <label className={style.label}>Contraseña</label>
@@ -93,7 +99,9 @@ export default function Register() {
                 name='password' 
                 value={form.password} 
                 onChange={handleChange} 
-                placeholder='Contraseña'/>
+                placeholder='Contraseña'
+                required
+                />
                 <small>{errors?.password}</small>
                 <span className={style.eye}><FiEye/></span>
                 <span className={style.eye}><FiEyeOff/></span>
@@ -105,11 +113,13 @@ export default function Register() {
                 <input 
                 className = {style.inputpassword}
                 type="password" 
-                name='password' 
-                value={form.password} 
+                name='confirmPassword' 
+                value={form.confirmPassword} 
                 onChange={handleChange} 
-                placeholder='Contraseña'/>
-                <small>{errors?.password}</small>
+                placeholder='Contraseña'
+                required
+                />
+                <small>{errors?.confirmPassword}</small>
                 <span className={style.eye}><FiEye/></span>
                 <span className={style.eye}><FiEyeOff/></span>
 
