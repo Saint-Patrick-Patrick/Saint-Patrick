@@ -39,6 +39,7 @@ function Login() {
   };
 
   const handlePassportLogin = (e) => {
+    console.log(e.target.id)
     window.location.href = `${import.meta.env.VITE_BACKEND_URL}/auth/${e.target.id}`;
   };
 
@@ -77,12 +78,12 @@ function Login() {
         <button className={style.btn_submit}>Iniciar sesión</button>
 
         <div className={style.btn_google} id="google" onClick={handlePassportLogin}>
-          <img src={logoGoogle} alt="" />
-          <h3>Iniciar con Google</h3>
+          <img src={logoGoogle} alt="" id="google"/>
+          <h3 id="google">Iniciar con Google</h3>
         </div>
         <div className={style.btn_facebook} id="facebook" onClick={handlePassportLogin}>
-          <img src={logoFacebook} alt="" />
-          <h3>Iniciar con Facebook</h3>
+          <img src={logoFacebook} alt="" id="facebook"/>
+          <h3 id="facebook">Iniciar con Facebook</h3>
         </div>
         
       </form>
