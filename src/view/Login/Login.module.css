@@ -1,68 +1,68 @@
-
-body{
-position:static;
-background: var(--background-login);
-padding: 0px;
-box-sizing: border-box;
-width: 100%;
-height: 100vh;
-text-align: left;
-font-size: var(--font-size-l);
-color: var(--color-black);
-font-family: var(--font-roboto);
-
+body {
+    position: static;
+    background: var(--background-login);
+    padding: 0px;
+    box-sizing: border-box;
+    height: 100vh;
+    text-align: left;
+    font-size: var(--font-size-l);
+    color: var(--color-black);
+    font-family: var(--font-roboto);
 }
 
-.formcontainer{
+.formcontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 .formcontainer h1 {
-    margin-left: -28%;
+    margin-right: 17%;
+    /*Todo: Esto esta mal, es por el global de arriba */
     margin-top: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 10px;
     font-size: var(--lg);
     color: var(--black);
     font-weight: lighter;
+    color: white;
     font-family: var(--font);
     text-shadow: 0 6px 4px rgba(0, 0, 0, 0.35);
 }
 
 .form {
     backdrop-filter: blur(10px);
-    box-shadow: 0 6px 4px rgba(0, 0, 0, 0.35) inset, 0 6px 4px rgba(0, 0, 0, 0.35);
-    width: 40%;   
-    padding: 20px;
+    width: 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 14px;
     transition: background-color 0.3s ease-in-out;
     border-radius: 20px;
     display: flex;
+    gap: .2rem;
     flex-direction: column;
-    
-   
 }
 
 .form:hover {
-    background-color: rgba(255,255,255,0.1);
-} 
+    background-color: rgba(255, 255, 255, 0.1);
+}
 
-.label{   
+.label {
     margin-bottom: 4px;
     padding: 5px;
     font-family: var(--font);
-    font-weight: bold;
     font-size: var(--md);
-    
+
 }
 
 
 .inputext,
-.inputpassword{
-    padding: 10px;
+.inputpassword {
+    padding: 12px;
     border-radius: 30px;
     margin-bottom: 8px;
+    outline: none;
+    border: none;
 }
 
 .password_container {
@@ -72,51 +72,53 @@ font-family: var(--font-roboto);
     margin-bottom: 20px;
 }
 
-.password_container a{
+.form a {
+    margin-top: 1rem;
     text-decoration: none;
     color: var(--white);
     font-family: var(--font);
     font-size: var(--sm);
-    
+    text-align: center;
+
 }
 
 
 .btn_submit {
     background-color: #26730e;
-    width: 80%;
+    width: 250px;
     margin: auto;
     padding: 10px;
     border-radius: 30px;
     border: 1px solid #1e580d;
     cursor: pointer;
-    box-shadow: 
-    0px 0px 10px rgba(0, 0, 0, 1), 
-    inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     margin-bottom: 16px;
     font-family: var(--font);
     font-size: var(--sm);
-    font-weight: bold;
     text-transform: uppercase;
     color: var(--white);
-    
-}.btn_submit:hover {
+
+}
+
+.btn_submit:hover {
     background-color: #1e580d;
     color: var(--black);
 }
 
-.btn_google{
+.btn_google {
     background-color: var(--white);
     color: #333;
     border: 1px solid var(--soft-yellow);
     border-radius: 30px;
-    padding: 5px;
+
+    padding: 9px;
     display: flex;
-    width: 50%;
+    width: 250px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-size: var(--sm);
     font-family: var(--font);
-    margin: auto;
+    margin: 1rem auto 0 auto;
     margin-bottom: 8px;
     cursor: pointer;
 
@@ -127,11 +129,11 @@ font-family: var(--font-roboto);
     color: #333;
     border: 1px solid var(--soft-yellow);
     border-radius: 30px;
-    padding: 5px;
+    padding: 9px;
     display: flex;
-    width: 50%;
+    width: 250px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     font-size: var(--sm);
     font-family: var(--font);
     margin: auto;
@@ -149,24 +151,23 @@ font-family: var(--font-roboto);
 
 .btn_google:hover,
 .btn_facebook:hover {
-    box-shadow: 
-    0px 0px 10px rgba(0, 0, 0, 1), 
-    inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 @media (max-width: 600px) {
     form {
-    padding: 20px;
+        padding: 20px;
     }
+
     input[type="submit"],
     .btn-google,
-    .btn-facebook
-    .btn-submit {
-    width: 100%;
+    .btn-facebook .btn-submit {
+        width: 100%;
     }
+
     input[type="text"],
     input[type="password"] {
-    padding-left: 40px;
-    background-size: auto 15px;
+        padding-left: 40px;
+        background-size: auto 15px;
     }
 }
