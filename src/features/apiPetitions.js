@@ -1,4 +1,5 @@
 import axios from "./axios.js";
+import { setTransactions } from "./transactionsSlice.js";
 import { setUser } from "./userSlice.js";
 
 export async function getHello(state) {
@@ -64,3 +65,12 @@ export async function authUser(token, state){
 //     console.log(error)
 //   }
 // }
+export async function getTransactions({type, state}){
+  try {
+    const petition = await axios.get("/transactions/all")
+    console.log(state(setTransactions(petition?.data)))
+state(setTransactions(petition?.data))
+  } catch (error) {
+    console.log(error)
+  }
+}

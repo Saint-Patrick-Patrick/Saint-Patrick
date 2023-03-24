@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../App.css";
+import "../../../../App.css";
 import {  useSelector } from "react-redux";
 
 function Wallet() {
