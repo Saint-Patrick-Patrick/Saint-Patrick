@@ -8,10 +8,8 @@ export const Logo = () => {
   return (
     <div >
         <Link to = '/'>
-        <img className = {style.logo} src={logo} alt="" />
+          <img className = {style.logo} src={logo} alt="" />
         </Link>
-      
-
     </div>
   )
 }

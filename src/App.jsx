@@ -21,9 +21,9 @@ function App() {
   }, []);
   return (
     <>
-      <NavBar/>
+      <NavBar />
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/wallet" element={<Main />} />

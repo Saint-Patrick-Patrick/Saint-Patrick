@@ -11,12 +11,12 @@ function Login() {
   const dispatch = useDispatch();
   useEffect(() => {
     setTimeout(() => {
-        const params = new URLSearchParams(window.location.search);
-            const token = params.get("token");
-            if (token) {
-            localStorage.setItem("tkn", token);
-            authUser(token, dispatch).then(e => window.location.pathname = '/wallet')
-            }
+      const params = new URLSearchParams(window.location.search);
+      const token = params.get("token");
+      if (token) {
+        localStorage.setItem("tkn", token);
+        authUser(token, dispatch).then(e => window.location.pathname = '/wallet')
+      }
     }, 50)
   }, []);
 
@@ -43,13 +43,13 @@ function Login() {
   };
 
   return (
-    <div className = {style.formcontainer}>
-       <h1>Inicio de Sesión</h1>
-      
-      <form  className = {style.form}  onSubmit={handleSubmit}> 
+    <div className={style.formcontainer}>
+      <h1>Inicio de Sesión</h1>
+
+      <form className={style.form} onSubmit={handleSubmit}>
         <label htmlFor="correo" className={style.label}>Login</label>
         <input
-          className = {style.inputext}
+          className={style.inputext}
           type="text"
           id="correo"
           name="email"
@@ -57,10 +57,10 @@ function Login() {
           placeholder="Email"
           onChange={handleChange}
         />
-        <label className= {style.label} htmlFor="contrasena">Password</label>
+        <label className={style.label} htmlFor="contrasena">Password</label>
         <div className={style.password_container}>
           <input
-            className = {style.inputpassword}
+            className={style.inputpassword}
             type="password"
             id="contrasena"
             name="password"
@@ -68,12 +68,8 @@ function Login() {
             placeholder="Contraseña"
             onChange={handleChange}
           />
-         
-          <a href="#" style={{ float: "right" }}>
-            ¿Olvidaste tu Contraseña?
-          </a>
         </div>
-       
+
         <button className={style.btn_submit}>Iniciar sesión</button>
 
         <div className={style.btn_google} id="google" onClick={handlePassportLogin}>
@@ -84,10 +80,13 @@ function Login() {
           <img src={logoFacebook} alt="" />
           <h3>Iniciar con Facebook</h3>
         </div>
-        
+
+        <a href="#">
+            ¿Olvidaste tu Contraseña?
+        </a>
       </form>
 
-      
+
     </div>
   );
 }
