@@ -4,7 +4,7 @@ import colaborators from "./colaborators";
 import style from "./About.module.css";
 
 export default function About() {
-  const handleClick=(link)=>{
+  const handleClick = (link) => {
     window.open(link)
   }
   return (
@@ -33,17 +33,15 @@ export default function About() {
       </div>
       <div className={style.colabContainer}>
         <div><h3>COLABORADORES</h3></div>
-        
-         <div className={style.blur}></div>
-          <div className={style.colaborators}>
-            {colaborators?.map((c) => (
-              // <a href={c.link}>
-                <img src={c.image} alt={c.link} onClick={()=> handleClick(c.link)} />
-              // </a>
-            ))}
-          </div>
-       
+
+        <div className={style.blur}></div>
+        <div className={style.colaborators}>
+          {colaborators?.map((c, i) => (
+            <img key={i} src={c.image} alt={c.link} onClick={() => handleClick(c.link)} />
+          ))}
+        </div>
+
       </div>
-    </div>
+    </div >
   );
 }
