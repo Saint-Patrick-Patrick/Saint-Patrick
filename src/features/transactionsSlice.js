@@ -12,7 +12,11 @@ const transactionsSlice = createSlice({
       state.transactions = payload;
       //console.log(state);
     },
+    updateTransactions(state, { payload }) {
+      // Concatena la nueva transacción al arreglo existente de transacciones
+      state.transactions = [...state.transactions, payload];
+    }
   },
 });
-export const { setTransactions } = transactionsSlice.actions;
+export const { setTransactions, updateTransactions } = transactionsSlice.actions;
 export default transactionsSlice.reducer;
