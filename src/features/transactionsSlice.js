@@ -10,7 +10,7 @@ const transactionsSlice = createSlice({
   reducers: {
     setTransactions(state, { payload }) {
       state.transactions = payload;
-      console.log(state);
+      //console.log(state);
     },
   },
 });
