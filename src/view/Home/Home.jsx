@@ -1,8 +1,15 @@
-import React from "react"
+import React from 'react'
+import style from './Home.module.css'
+import { HeroImage } from './components/HeroImage'
 
-export default function Home(){
+
+export function Home(){
     return(
-        <div>
+        <div > 
+            <HeroImage/>
+            
+
+
         </div>
     )
 }
